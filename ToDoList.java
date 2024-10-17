@@ -1,11 +1,12 @@
 import java.io.*;
 import java.util.ArrayList;
 
+
 public class ToDoList {
 
     private ArrayList<Tarefa> geralTarefas;
     
-    private ToDoList(){
+    public ToDoList(){
         this.geralTarefas = new ArrayList<>();
     }
 

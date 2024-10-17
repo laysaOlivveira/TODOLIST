@@ -43,8 +43,8 @@ public class Tarefa implements Serializable {
         this.prioridade = prioridade;
     }
 
-    public void setCompleto() {
-        this.completo = true;
+    public void setCompleto(boolean completo) {
+        this.completo = completo;
     }
 
     public String toString(){
@@ -65,11 +65,9 @@ public class Tarefa implements Serializable {
 
     // carregar a partir de uma string de arquivo
     public static Tarefa fromFileString(String fileString){
-        String[] partes = fileString.split("\\|");
-        Tarefa tarefa = new Tarefa(partes[0], partes[1], Integer.parseInt(partes[2]));
-        if (Boolean.parseBoolean(partes[3])){
-            tarefa.setCompleto();
-        }
+        String[] partes = fileString.split("\\|");  // Correção do split
+        Tarefa tarefa = new Tarefa(partes[0], partes[1], Integer.parseInt(partes[2]), Boolean.parseBoolean(partes[3]));  // Passando 4 parâmetros
         return tarefa;
     }
+    
 }
