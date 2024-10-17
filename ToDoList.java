@@ -11,8 +11,8 @@ public class ToDoList {
     }
 
     // Adiciona tarefa à lista geral
-    public void addGeneralTarefa(String name, String dataLimite, int prioridade) {
-        geralTarefas.add(new Tarefa(name, dataLimite, prioridade));
+    public void addGeneralTarefa(String name, String dataLimite, int prioridade, boolean completo) {
+        geralTarefas.add(new Tarefa(name, dataLimite, prioridade, completo));
     }
 
      // Lista todas as tarefas gerais
@@ -27,18 +27,18 @@ public class ToDoList {
     }
 
     // Salva uma tarefa em arquivo de categoria
-    public void addTarefaToCategory(String category, String name, String dataLimite, int prioridade) {
-        Tarefa tarefa = new Tarefa(name, dataLimite, prioridade);
+    public void addTarefaToCategory(String category, String name, String dataLimite, int prioridade, boolean completo) {
+        Tarefa tarefa = new Tarefa(name, dataLimite, prioridade, completo);
         saveTarefaToFile(category + ".txt", tarefa);
     }
 
         // Edita uma tarefa de uma categoria
-        public void editTarefaInCategory(String category, int TarefaIndex, String newName, String newDueDate, int newPriority) {
+        public void editTarefaInCategory(String category, int TarefaIndex, String newName, String newdataLimite, int newPriority) {
             ArrayList<Tarefa> Tarefas = loadTarefasFromFile(category + ".txt");
             if (TarefaIndex >= 0 && TarefaIndex < Tarefas.size()) {
                 Tarefa Tarefa = Tarefas.get(TarefaIndex);
                 Tarefa.setName(newName);
-                Tarefa.setDataLimite(newDueDate);
+                Tarefa.setDataLimite(newdataLimite);
                 Tarefa.setPrioridade(newPriority);
                 saveTarefasToFile(category + ".txt", Tarefas); // Sobrescreve o arquivo
             } else {

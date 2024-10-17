@@ -25,11 +25,12 @@ public class Main {
                     System.out.print("Digite o nome da tarefa: ");
                     String name = scanner.nextLine();
                     System.out.print("Digite a data limite (dd/MM/yyyy): ");
-                    String dueDate = scanner.nextLine();
+                    String dataLimite = scanner.nextLine();
                     System.out.print("Digite a prioridade (1 = Alta, 2 = Média, 3 = Baixa): ");
                     int priority = scanner.nextInt();
                     scanner.nextLine();
-                    todoList.addGeneralTarefa(name, dueDate, priority);
+                    boolean completo = false;
+                    todoList.addGeneralTarefa(name, dataLimite, priority, completo);
                     break;
                 case 2:
                     System.out.print("Digite a categoria/disciplina: ");
@@ -37,11 +38,12 @@ public class Main {
                     System.out.print("Digite o nome da tarefa: ");
                     name = scanner.nextLine();
                     System.out.print("Digite a data limite (dd/MM/yyyy): ");
-                    dueDate = scanner.nextLine();
+                    dataLimite = scanner.nextLine();
                     System.out.print("Digite a prioridade (1 = Alta, 2 = Média, 3 = Baixa): ");
                     priority = scanner.nextInt();
                     scanner.nextLine();
-                    todoList.addTarefaToCategory(category, name, dueDate, priority);
+                    boolean completa = false;
+                    todoList.addTarefaToCategory(category, name, dataLimite, priority, completa);
                     break;
                 case 3:
                     todoList.listGeneralTarefas();
@@ -60,11 +62,11 @@ public class Main {
                     System.out.print("Novo nome da tarefa: ");
                     String newName = scanner.nextLine();
                     System.out.print("Nova data limite: ");
-                    String newDueDate = scanner.nextLine();
+                    String newdataLimite = scanner.nextLine();
                     System.out.print("Nova prioridade (1 = Alta, 2 = Média, 3 = Baixa): ");
                     int newPriority = scanner.nextInt();
                     scanner.nextLine();
-                    todoList.editTarefaInCategory(category, indexToEdit, newName, newDueDate, newPriority);
+                    todoList.editTarefaInCategory(category, indexToEdit, newName, newdataLimite, newPriority);
                     break;
                 case 6:
                     System.out.print("Digite a categoria/disciplina: ");
