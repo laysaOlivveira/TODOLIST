@@ -42,7 +42,7 @@ public class ToDoList {
                 Tarefa.setPrioridade(newPriority);
                 saveTarefasToFile(category + ".txt", Tarefas); // Sobrescreve o arquivo
             } else {
-                System.out.println("Índice inválido!");
+                System.out.println( "Indice inválido!");
             }
         }
     
@@ -53,7 +53,7 @@ public class ToDoList {
                 Tarefas.remove(TarefaIndex);
                 saveTarefasToFile(category + ".txt", Tarefas); // Sobrescreve o arquivo
             } else {
-                System.out.println("Índice inválido!");
+                System.out.println("Indice inválido!");
             }
         }
     
